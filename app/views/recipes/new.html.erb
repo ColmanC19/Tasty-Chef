@@ -1,0 +1,18 @@
+
+<h1>New recipe</h1>
+
+<%= render "layouts/recipe_form" %>
+
+<%= form_for @recipe do |f| %>
+<% if @recipe.errors.any? %>
+  <h3>Please fix these errors:</h3>
+  <ul>
+    <% @recipe.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.submit  %>
+<% end %>

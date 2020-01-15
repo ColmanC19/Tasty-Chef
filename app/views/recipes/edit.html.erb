@@ -1,0 +1,9 @@
+<h1>Edit recipe</h1>
+
+<%= render "layouts/recipe_form" %>
+
+<%= form_for @recipe do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.submit  %>
+<% end %>
