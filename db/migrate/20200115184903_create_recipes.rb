@@ -3,6 +3,7 @@ class CreateRecipes < ActiveRecord::Migration[5.2]
     create_table :recipes do |t|
       t.string :instructions
       t.integer :rating
+      t.string :name
 
       t.timestamps()
     end
