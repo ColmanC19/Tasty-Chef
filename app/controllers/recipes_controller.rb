@@ -25,6 +25,7 @@ end
 
 def show
   @recipe = Recipe.find(params[:id])
+  @tag = Tag.find(params[:id])
   render :show
 end
 
@@ -42,6 +43,7 @@ def destroy
   @recipe.destroy
   redirect_to recipes_path
 end
+
 # Other controller methods go here.
 
 private

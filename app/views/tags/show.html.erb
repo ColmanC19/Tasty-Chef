@@ -1,5 +1,7 @@
 <h1>Tag: <%= @tag.name %></h1>
-<h2>Recipe: <%= @recipe.instructions %></h2>
+<h2>Recipe: <%= @recipe.name %></h2>
+<h2>Instructions: <%= @recipe.instructions %></h2>
+<h3><%= @tag.ingredient %></h3>
 
 
 <p><%= link_to "Edit tag", edit_recipe_tag_path(@recipe, @tag) %></p>
