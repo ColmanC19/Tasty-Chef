@@ -3,8 +3,10 @@
 
 <%= form_for [@recipe, @tag] do |f| %>
   <%= f.label :name %>
-  <%= f.collection_select :name %>
+  <%= f.text_field :name %>
   <%= f.label :ingredient %>
   <%= f.check_box :ingredient %>
   <p><%= f.submit %></p>
 <% end %>
+
+<%# collection_select %>

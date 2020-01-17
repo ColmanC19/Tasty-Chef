@@ -10,6 +10,7 @@ class TagsController < ApplicationController
     @tag = Tag.new(tag_params)
     @tags = @recipe.tags.new(tag_params)
     if @tag.save
+      @recipe.tags << @tag
       redirect_to recipe_path(@recipe)
     else
       render :new
@@ -29,18 +30,20 @@ class TagsController < ApplicationController
   end
 
   def update
+    @recipe = Recipe.find(params[:recipe_id])
     @tag = Tag.find(params[:id])
     if @tag.update(tag_params)
-      redirect_to recipe_path(@tag.recipe)
+      redirect_to recipe_path(@recipe)
     else
       render :edit
     end
   end
 
   def destroy
+    @recipe = Recipe.find(params[:recipe_id])
     @tag = Tag.find(params[:id])
     @tag.destroy
-    redirect_to recipe_path(@tag.recipe)
+    redirect_to recipe_path(@recipe)
   end
 
   # Other controller actions go here.
